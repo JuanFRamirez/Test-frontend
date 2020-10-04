@@ -1,9 +1,14 @@
-import React,{useState,useEffect,Fragment} from 'react';
+import React,{useState,useEffect} from 'react';
 import axios from 'axios';
 
 const Orders = ()=>{
 
     const [orderList,setOrders] = useState([]);
+    const [tags,SetTags] = useState({
+        transito:0,
+        prealertado:0,
+        entregado:0
+    })
 
     useEffect(()=>{
          // first start the json server on port 5000
@@ -16,25 +21,66 @@ const Orders = ()=>{
                 orderList:[response.data]
             });
             console.log(response.data);
+            contarTags(response.data)
+
         }).catch(error=>console.log(error))
 
+        SetTags({
+            ...tags
+        })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
+
+    function contarTags(arg){
+       const result = arg.filter(transito=>
+           transito.Tag == 'transito'
+       );
+       const result2 = arg.filter(alertado=>
+        alertado.Tag == 'prealertado'
+    );
+    const result3 = arg.filter(entrega=>
+        entrega.Tag == 'entregado'
+    );
+       let enTransito = result.length;
+       let preAlertado = result2.length;
+       let entregado = result3.length;
+
+       SetTags({
+           ...tags,
+           transito:enTransito,
+           prealertado:preAlertado,
+           entregado:entregado
+
+       })
+       
+
+    }
 
     return(
        
                     <div className="orders">
                          <ul className="nav nav-tabs" id="nav-tab" role="tablist">
-                           
-                                <a className="nav-item nav-link active" href="#nav-paq" data-toggle="tab" role="tab" aria-controls="nav-paq" aria-selected="true">Paquetes</a>
-                            
-                                 <a className="nav-link" href="#nav-ord" data-toggle="tab" role="tab" aria-controls="nav-ord" aria-selected="false">Ordenes de Compra</a>
-                            
-                                <a className="nav-link" href="#nav-pag" data-toggle="tab" role="tab" aria-controls="nav-pag" aria-selected="false">Pagos Pendientes</a>
+
+                                <li className="nav-item active">
+                                <a className="nav-link" href="#nav-paq" data-toggle="tab" role="tab" aria-controls="nav-paq" >Paquetes</a>
+                                </li>
+
+                                <li className="nav-item">
+                                 <a className="nav-link" href="#nav-ord" data-toggle="tab" role="tab" aria-controls="nav-ord" >Ordenes de Compra</a>
+                                </li>
+                                <li className="nav-item">
+                                <a className="nav-link" href="#nav-pag" data-toggle="tab" role="tab" aria-controls="nav-pag" >Pagos Pendientes</a>
+                                </li>
                             </ul>
 
                         <div className="tab-content">
 
                         <div className="tab-pane fade show active table-responsive" id="nav-paq" role="tabpanel">
+                        <div className="tags">
+                            <h4>En Tránsito <span className="cantidad-tag">{tags.transito}</span></h4>
+                            <h4>Prealertados <span className="cantidad-tag">{tags.prealertado}</span></h4>
+                            <h4>Entregados <span className="cantidad-tag">{tags.entregado}</span></h4>
+                        </div>
                         <table className="table table-striped table-pagination">
                             <thead>
                                 <tr>

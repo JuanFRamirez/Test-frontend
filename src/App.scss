@@ -3,6 +3,11 @@
     margin: 0;
     box-sizing: border-box;
 }
+.stk{
+    position: sticky;
+    top: 0;   
+    z-index: 3;
+}
 .btn-primary-color{
     background-color: #fff;
     color: rebeccapurple;
@@ -10,12 +15,8 @@
 .menu-container{
     background-color: rebeccapurple;
     z-index: 3;
-    position: fixed;
 }
 
-.body-container{
-    padding-top: 15%;
-}
 
 .menu{
     justify-content: flex-end;
@@ -127,24 +128,31 @@
     display: flex;
     overflow: scroll;
     overflow-y: hidden;
+    background-color: #e1e1e1;
     cursor: pointer;
+    flex-wrap: nowrap;
+    flex-grow: 3;
+    justify-content: flex-start;
+    gap: 5rem;
     
     &::-webkit-scrollbar{
         background-color: transparent;
     }
     .single-product{
         user-select: none;
-        display: flex;
-        max-width: 30%;
-        flex-direction: column;
-        justify-content: center;
-        padding: 1rem;
-        margin-left: 1rem;
-        margin-right: 5rem;
+    display: flex;
+    max-width: 30%;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    margin-left: 1rem;
+    margin-top: 1.5rem;
+    background: #fff;
+    min-width: 14%;
 
     img{
         max-width: 100%;
-        min-width: 250px;
+        min-width: 100%;
         height: 200px;
         object-fit: cover;
     }
@@ -314,35 +322,107 @@ form{
     }
 }
 
+.tags{
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    background-color: #e1e1e1;
+    width: 100%;
+    margin: 1.5rem 0rem;
+
+    h4{
+        font-weight: 400;
+        padding: 1rem;
+        color: rebeccapurple;
+        font-size: 1.2rem;
+    }
+    .cantidad-tag{
+        background-color: yellow;
+        color: rebeccapurple;
+        padding: 8px 15px;
+        border-radius: 100%;
+        display: inline;
+        vertical-align: middle;
+        font-weight: 700;
+    }
+}
+
 @media screen and (min-width:990px){
 
     .navbar-toggler{
         display: none;
     }
+    
 }   
 @media screen and (max-width:990px){
 
     .buttons{
         display: none !important;
     }
+    .single-product{
+        min-width: 50% !important;
+    }
+    .contact-form{
+        h1{
+            font-size: 2rem;
+            width: 100%;
+        }
+        .search-box{
+            padding: 0;
+            width: 80%;
+
+            span i{
+                font-size: 1rem;
+            }
+
+            input{
+                font-size: 1rem;
+                margin: 0;
+            }
+        }
+
+        form .two-fields{
+            flex-direction: column;
+           .form-control{
+               width: 100% !important;
+           } 
+        }
+
+        form .three-fields{
+            flex-direction: column;
+            .form-control{
+                width: 100% !important;
+            }
+        }
+
+        form .detalles-facturacion{
+            display: flex;
+    justify-content: center;
+    padding: 2rem;
+    flex-direction: column;
+    font-size: .9rem;
+    text-align: center;
+        }
+
+        form .taxes{
+            text-align: center;
+        }
+
+        form .comprar{
+            width: 100%;
+        }
+    }
 }  
 @media screen and (max-width:770px){
-    .body-container{
-        padding-top: 50%;
-    }
+   .carousel{
+       gap: 0;
+   }
 }
 
-@media screen and (max-width:660px){
-    .body-container{
-        padding-top: 39%;
-    }
-}
 
 @media screen and(max-width:450px){
 
-    .body-container{
-        padding-top: 100%;
-    }
+   
     .menu-last-row{
         h2{
             font-size: 1rem;
@@ -373,19 +453,13 @@ form{
     }
     .carousel{
         .single-product{
-            max-width: 56%;
 
             h3{
                 font-size: 1rem;
-            }
-            img{
-                min-width: 240px;
             }
         }
     }
 }
 @media screen and (max-width:400px){
-    .body-container{
-        padding-top: 120%;
-    }
+   
 }

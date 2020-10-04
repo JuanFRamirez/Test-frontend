@@ -25,13 +25,8 @@ const Carousel = ()=>{
           }
         )
         .catch(error=>console.log(error))
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
-    /*let allProducts = products.products
-    console.log(allProducts);*/
-
-   //end of api request
-
-    //carousel start on x axis
 
     let scrollLeft;
     let grabbing = false;

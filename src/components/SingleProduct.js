@@ -10,6 +10,7 @@ return(
          <img
          src={Image}
          loading="lazy"
+         alt="product ph"
          />
          <p>{Footer}</p>
     </div>

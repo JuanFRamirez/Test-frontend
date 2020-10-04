@@ -6,7 +6,7 @@ const Contacts = ()=>{
     const [formState,setForm] = useState({
         search:'',
         titulo:'',
-        nuevo:'',
+        estado:'',
         categoria:'',
         cantidad:0,
         peso:0,
@@ -15,7 +15,7 @@ const Contacts = ()=>{
 
     })
 
-    const{search,titulo,nuevo,categoria,cantidad,peso,precio,detalles} = formState
+    const{search,titulo,estado,categoria,cantidad,peso,precio,detalles} = formState
 
     let precioConTax = 0;
 
@@ -23,6 +23,7 @@ const Contacts = ()=>{
         setForm({
            ...formState
         })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
     const onChangeHandler=(e)=>{
@@ -34,7 +35,7 @@ const Contacts = ()=>{
 
     const submitHandler=(e)=>{
         e.preventDefault()
-        if(search!=='' && titulo !==''&& nuevo!==''&& categoria!==''&& peso!=0 && cantidad!=0 && precio!=0 && detalles!==''){
+        if(search!=='' && titulo !==''&& estado!==''&& categoria!==''&& peso!==0 && cantidad!==0 && precio!==0 && detalles!==''){
 
             try{
 
@@ -42,7 +43,7 @@ const Contacts = ()=>{
                     ...formState,
                     search:search,
                     titulo:titulo,
-                    nuevo:nuevo,
+                    estado:estado,
                     categoria:categoria,
                     peso:parseFloat(peso),
                     cantidad:Number(cantidad),
@@ -102,9 +103,9 @@ const Contacts = ()=>{
                 value={titulo}
                 />
                 <label>Detalles del producto:</label>
-                <p className="faded">Es un producto Nuevo? A qué categoría pertenece? Cuánto cuesta?</p>
+                <p className="faded">¿Es un producto Nuevo? ¿A qué categoría pertenece? ¿Cuánto cuesta?</p>
                 <div className="two-fields">
-                    <select className="select" name="nuevo" className="form-control w-25" onChange={e=>onChangeHandler(e)} value={nuevo}>
+                    <select className="select" name="estado" className="form-control w-25" onChange={e=>onChangeHandler(e)} value={estado}>
                         <option defaultValue="Estado">Estado</option>
                         <option value="nuevo">Nuevo</option>
                         <option value="usado">Usado</option>

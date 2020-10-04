@@ -6,22 +6,22 @@ const Footer = ()=>{
             <div className="footer-menu">
                 <div className="f-menu-item">
                     <h4>General</h4>
-                    <a href="#">Tarifas</a>
-                    <a href="#">Productos Restringidos</a>
-                    <a href="#">Calculadora</a>
+                    <a href="#tarifas">Tarifas</a>
+                    <a href="#productos">Productos Restringidos</a>
+                    <a href="#calculadora">Calculadora</a>
                 </div>
 
                 <div className="f-menu-item">
                     <h4>Ayuda</h4>
-                    <a href="#">Compras en WCE</a>
-                    <a href="#">Preguntas Frecuentes</a>
-                    <a href="#">Contáctanos</a>
+                    <a href="#compras">Compras en WCE</a>
+                    <a href="#qa">Preguntas Frecuentes</a>
+                    <a href="/contactos">Contáctanos</a>
                 </div>
 
                 <div className="f-menu-item">
                     <h4>Promociones</h4>
-                    <a href="#">Puntos WCEicons</a>
-                    <a href="#">Refiere a tus amigos</a>
+                    <a href="#puntos">Puntos WCEicons</a>
+                    <a href="#rfiere">Refiere a tus amigos</a>
                 </div>
 
                 <div className="chat-box">
@@ -30,7 +30,7 @@ const Footer = ()=>{
 
             </div>
             <div className="copyright">
-                <p>Todos los Derechos Reservados cworld Cargo Express Corp | <span><a href="#">Términos y Condiciones</a></span></p>
+                <p>Todos los Derechos Reservados ©world Cargo Express Corp | <span><a href="#">Términos y Condiciones</a></span></p>
             </div>
         </div>
     )

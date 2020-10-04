@@ -4,10 +4,10 @@ import {Link} from 'react-router-dom';
 const Header =()=>{
    
     return (
-        <div>
+        <div className="stk">
         <div className="col w-100 menu-container">
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
+        <i className="fas fa-bars"></i>
          </button>  
         <nav className="menu row navbar navbar-expand-lg">
             <div className="collapse navbar-collapse" id="menu">
@@ -24,7 +24,7 @@ const Header =()=>{
             <div className="buttons">
                <button className="btn btn-warning"><Link to="/contactos">Compra con Nosotros</Link></button>
                 <button className="btn btn-primary-color">Prealerta tus Paquetes</button>
-                <span><i className="fas fa-envelope"></i> Mensajes</span>
+                <span><i className="fas fa-envelope"></i> Mensajes <i className="fas fa-angle-down"></i></span>
             </div>
         </div>
         <div className="menu-last-row">
