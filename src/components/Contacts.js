@@ -83,7 +83,7 @@ const Contacts = ()=>{
                 <input
                 type="text"
                 name="search"
-                required
+                required="required"
                 placeholder="Pega aqui el enlace del producto de una tienda"
                 className="form-control"
                 onChange={e=>onChangeHandler(e)}

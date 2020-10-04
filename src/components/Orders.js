@@ -34,8 +34,8 @@ const Orders = ()=>{
 
                         <div className="tab-content">
 
-                        <div className="tab-pane fade show active" id="nav-paq" role="tabpanel">
-                        <table className="table table-striped">
+                        <div className="tab-pane fade show active table-responsive" id="nav-paq" role="tabpanel">
+                        <table className="table table-striped table-pagination">
                             <thead>
                                 <tr>
                                     <th>Tracking</th>
@@ -47,7 +47,7 @@ const Orders = ()=>{
                             </thead>
                             <tbody>
                         {
-                            orderList.length === 0 ? <tr><td>no hay ordenes</td></tr> : orderList.orderList[0].map(ordenes=>(
+                            orderList.length === 0 ? <tr><td>Cargando ordenes...</td></tr> : orderList.orderList[0].map(ordenes=>(
                                 <tr key={ordenes.id}>
                                     <td>{ordenes.tracking}</td>
                                     <td>{ordenes.fecha}</td>
@@ -63,7 +63,7 @@ const Orders = ()=>{
                         </div>
 
                         <div className="tab-pane fade" id="nav-ord" role="tabpanel">
-                        <table> 
+                        <table className="table table-striped table-responsive"> 
                             <thead>
 
                             </thead>
@@ -76,7 +76,7 @@ const Orders = ()=>{
                         </div>
 
                         <div className="tab-pane fade" id="nav-pag" role="tabpanel">
-                        <table> 
+                        <table className="table table-striped table-responsive"> 
                             <thead>
 
                             </thead>

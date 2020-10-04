@@ -69,7 +69,7 @@ const Carousel = ()=>{
         onMouseLeave={e=>mouseLeaveHandle(e)}>
           
             {
-                products.length === 0 ? 'No hay productos en la tienda :(' : products.products[0].map(product=>(
+                products.length === 0 ? 'Cargando...' : products.products[0].map(product=>(
                    <SingleProduct
                         key = {product.id}
                         product={product}

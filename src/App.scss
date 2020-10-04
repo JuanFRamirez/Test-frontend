@@ -9,9 +9,17 @@
 }
 .menu-container{
     background-color: rebeccapurple;
+    z-index: 3;
+    position: fixed;
 }
+
+.body-container{
+    padding-top: 15%;
+}
+
 .menu{
     justify-content: flex-end;
+    float: right;
 
     ul{
         list-style: none;
@@ -23,6 +31,11 @@
             color: #fff;
         }
     }
+}
+.navbar-toggler{
+    float: right;
+    color: #fff;
+    padding: 1.5rem;
 }
 
 .logo-container{
@@ -301,7 +314,40 @@ form{
     }
 }
 
-@media screen and(max-width:400px){
+@media screen and (min-width:990px){
+
+    .navbar-toggler{
+        display: none;
+    }
+}   
+@media screen and (max-width:990px){
+
+    .buttons{
+        display: none !important;
+    }
+}  
+@media screen and (max-width:770px){
+    .body-container{
+        padding-top: 50%;
+    }
+}
+
+@media screen and (max-width:660px){
+    .body-container{
+        padding-top: 39%;
+    }
+}
+
+@media screen and(max-width:450px){
+
+    .body-container{
+        padding-top: 100%;
+    }
+    .menu-last-row{
+        h2{
+            font-size: 1rem;
+        }
+    }
     .footer-menu{
         flex-direction: column;
         padding: 2rem 1rem 1rem 1rem !important;
@@ -336,5 +382,10 @@ form{
                 min-width: 240px;
             }
         }
+    }
+}
+@media screen and (max-width:400px){
+    .body-container{
+        padding-top: 120%;
     }
 }

@@ -2,18 +2,23 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 const Header =()=>{
-
    
     return (
-    <div className="col w-100 menu-container">
-        <nav className="menu row navbar-toggler">
-            <ul>
-                <li className="menu-item">Mis paquetes</li>
-                <li className="menu-item"><span>Ayuda</span> <i className="fas fa-angle-down"></i></li>
-                <li className="menu-item"><i className="fas fa-user"></i> <span> user </span> <i className="fas fa-angle-down"></i></li>
-                <li className="menu-item"> <i className="fas fa-shopping-cart"></i> <span> Español </span> <i className="fas fa-angle-down"></i></li>
+        <div>
+        <div className="col w-100 menu-container">
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+         </button>  
+        <nav className="menu row navbar navbar-expand-lg">
+            <div className="collapse navbar-collapse" id="menu">
+            <ul className="navbar-nav">
+                <li className="menu-item nav-item">Mis paquetes</li>
+                <li className="menu-item nav-item"><span>Ayuda</span> <i className="fas fa-angle-down"></i></li>
+                <li className="menu-item nav-item"><i className="fas fa-user"></i> <span> user </span> <i className="fas fa-angle-down"></i></li>
+                <li className="menu-item nav-item"> <i className="fas fa-shopping-cart"></i> <span> Español </span> <i className="fas fa-angle-down"></i></li>
             </ul>
-        </nav>     
+            </div>
+        </nav>   
         <div className="logo-container row w-100">
             <Link to='/'><h1>WCE|<span>BOXES</span></h1></Link>
             <div className="buttons">
@@ -25,6 +30,7 @@ const Header =()=>{
         <div className="menu-last-row">
             <h2>Casillero N:1234567890</h2>
         </div>
+    </div>
     </div>
     )
 }
