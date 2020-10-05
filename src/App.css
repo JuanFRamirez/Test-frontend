@@ -14,7 +14,7 @@
 
 .btn-primary-color {
   background-color: #fff;
-  color: rebeccapurple;
+  color: #41166d;
 }
 
 .menu-container {
@@ -39,6 +39,10 @@
 
 .menu ul li {
   margin-right: 2.5rem;
+  color: #fff;
+}
+
+.menu ul li a {
   color: #fff;
 }
 
@@ -101,7 +105,7 @@
       -ms-flex-direction: row;
           flex-direction: row;
   margin: 0;
-  background-color: rebeccapurple;
+  background-color: #41166d;
 }
 
 .footer .footer-menu {
@@ -124,11 +128,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  color: rebeccapurple;
+  color: #41166d;
 }
 
 .footer .f-menu-item a {
-  color: rebeccapurple;
+  color: #41166d;
   text-decoration: none;
 }
 
@@ -141,7 +145,7 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   margin: 0rem 1rem;
-  color: rebeccapurple;
+  color: #41166d;
   font-weight: 700;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -217,6 +221,7 @@
   margin-top: 1.5rem;
   background: #fff;
   min-width: 14%;
+  pointer-events: none;
 }
 
 .carousel .single-product img {
@@ -233,19 +238,19 @@
 
 .nav-link {
   color: #fff;
-  background-color: rebeccapurple;
+  background-color: #41166d;
   font-weight: 700;
   padding: 1rem 2rem;
   margin-right: 1rem;
 }
 
 .nav-link .active {
-  color: rebeccapurple;
+  color: #41166d;
   background-color: #fff;
 }
 
 td a {
-  color: rebeccapurple;
+  color: #41166d;
   font-weight: 700;
 }
 
@@ -265,7 +270,7 @@ td a {
 }
 
 .contact-form h1 {
-  color: rebeccapurple;
+  color: #41166d;
   font-weight: 700;
   width: 50%;
   text-align: center;
@@ -277,7 +282,7 @@ td a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: rebeccapurple;
+  background: #41166d;
   padding: 1rem;
   width: 50%;
   -webkit-box-align: center;
@@ -359,7 +364,7 @@ form .form-control {
   font-weight: 700;
   height: 4rem;
   margin-bottom: 1rem;
-  color: rebeccapurple;
+  color: #41166d;
 }
 
 form .form-control:hover, form .form-control :focus {
@@ -374,7 +379,7 @@ form .two-fields {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  color: rebeccapurple;
+  color: #41166d;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -461,7 +466,7 @@ form .comprar {
   margin: auto;
   font-size: 1.5rem;
   font-weight: 700;
-  color: rebeccapurple;
+  color: #41166d;
 }
 
 .tags {
@@ -480,13 +485,13 @@ form .comprar {
 .tags h4 {
   font-weight: 400;
   padding: 1rem;
-  color: rebeccapurple;
+  color: #41166d;
   font-size: 1.2rem;
 }
 
 .tags .cantidad-tag {
   background-color: yellow;
-  color: rebeccapurple;
+  color: #41166d;
   padding: 8px 15px;
   border-radius: 100%;
   display: inline;

@@ -1,7 +1,10 @@
 import React,{useEffect,useState} from 'react';
 import Swal from 'sweetalert2';
+import axios from 'axios';
 
 const Contacts = ()=>{
+
+    let formUrl = 'http://localhost:5000/Mensajes'
 
     const [formState,setForm] = useState({
         search:'',
@@ -15,9 +18,15 @@ const Contacts = ()=>{
 
     })
 
+    const [precioTax,setPreciotax] = useState({
+        precioConTax:0
+    })
+
     const{search,titulo,estado,categoria,cantidad,peso,precio,detalles} = formState
 
-    let precioConTax = 0;
+
+    const{precioConTax} = precioTax
+
 
     useEffect(()=>{
         setForm({
@@ -31,6 +40,10 @@ const Contacts = ()=>{
             ...formState,
             [e.target.name]:e.target.value
         })
+
+       setPreciotax({
+           precioConTax: precio*0.7
+       })
     }
 
     const submitHandler=(e)=>{
@@ -50,12 +63,18 @@ const Contacts = ()=>{
                     precio:Number(precio),
                     detalles:detalles
                 })
-                Swal.fire(
-                    'Exito',
-                    'Datos Enviados Correctamente, Revisar el console log',
-                    'success'
-                )
-                console.log(formState);
+
+                axios.post(formUrl,formState)
+                .then(response=>{
+                    Swal.fire(
+                        'Exito',
+                        'Datos Enviados Correctamente, Revisar el console log',
+                        'success'
+                    )
+                    console.log(response);
+                    //check here: http://localhost:5000/Mensajes
+                })
+                .catch(error=>(console.log(error)))
 
             }catch(e){
                 Swal.fire('Error',
@@ -171,7 +190,7 @@ const Contacts = ()=>{
 
                 <div className="totales">
                     <div className="precio-total">
-                        <span>total aproximado</span><b> ${precioConTax}</b>
+                        <span>total aproximado (precio * tax)</span><b> ${precio !==0 ||precio !== '' || precio !== null ? Number(precio) + parseFloat(precioConTax) : setPreciotax({precioConTax:0})}</b>
                     </div>  
 
                 <div className="detalles-facturacion">

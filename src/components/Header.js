@@ -12,7 +12,7 @@ const Header =()=>{
         <nav className="menu row navbar navbar-expand-lg">
             <div className="collapse navbar-collapse" id="menu">
             <ul className="navbar-nav">
-                <li className="menu-item nav-item">Mis paquetes</li>
+                <li className="menu-item nav-item"><a href="/">Mis paquetes</a></li>
                 <li className="menu-item nav-item"><span>Ayuda</span> <i className="fas fa-angle-down"></i></li>
                 <li className="menu-item nav-item"><i className="fas fa-user"></i> <span> user </span> <i className="fas fa-angle-down"></i></li>
                 <li className="menu-item nav-item"> <i className="fas fa-shopping-cart"></i> <span> Español </span> <i className="fas fa-angle-down"></i></li>

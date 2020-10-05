@@ -3,6 +3,10 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+$purple:#41166d;
+$purple2:rebeccapurple;
+
 .stk{
     position: sticky;
     top: 0;   
@@ -10,10 +14,10 @@
 }
 .btn-primary-color{
     background-color: #fff;
-    color: rebeccapurple;
+    color: $purple;
 }
 .menu-container{
-    background-color: rebeccapurple;
+    background-color: $purple2;
     z-index: 3;
 }
 
@@ -30,6 +34,10 @@
         li{
             margin-right: 2.5rem;
             color: #fff;
+
+            a{
+                color: #fff;
+            }
         }
     }
 }
@@ -76,7 +84,7 @@
     justify-content: center;
     flex-direction: row;
     margin: 0;
-    background-color: rebeccapurple;
+    background-color: $purple;
    
 
     .footer-menu{
@@ -91,10 +99,10 @@
     .f-menu-item{
         display: flex;
         flex-direction: column;
-        color: rebeccapurple;
+        color: $purple;
 
         a{
-            color: rebeccapurple;
+            color: $purple;
             text-decoration: none;
         }
     }
@@ -107,7 +115,7 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     margin: 0rem 1rem;
-    color: rebeccapurple;
+    color: $purple;
     font-weight: 700;
     display: flex;
     flex-direction: row;
@@ -149,6 +157,7 @@
     margin-top: 1.5rem;
     background: #fff;
     min-width: 14%;
+    pointer-events: none;
 
     img{
         max-width: 100%;
@@ -163,19 +172,19 @@
 }
 .nav-link{
         color: #fff;
-        background-color: rebeccapurple;
+        background-color: $purple;
         font-weight: 700;
         padding: 1rem 2rem;
         margin-right: 1rem;
 
         .active{
-            color: rebeccapurple;
+            color: $purple;
             background-color: #fff;
         }
 }
 td{
     a{
-        color: rebeccapurple;
+        color: $purple;
         font-weight: 700;
     }
 }
@@ -186,7 +195,7 @@ td{
     align-items: center;
     margin-top: 3rem;
     h1{
-        color: rebeccapurple;
+        color: $purple;
         font-weight: 700;
         width: 50%;
         text-align: center;
@@ -195,7 +204,7 @@ td{
     }
     .search-box{
     display: flex;
-    background: rebeccapurple;
+    background: $purple;
     padding: 1rem;
     width: 50%;
     align-items: center;
@@ -252,7 +261,7 @@ form{
         font-weight: 700;
         height: 4rem;
         margin-bottom: 1rem;
-    color: rebeccapurple;
+    color: $purple;
         &:hover,:focus{
             outline: none;
             border: none;
@@ -262,7 +271,7 @@ form{
     }
     .two-fields{
         display: flex;
-        color: rebeccapurple;
+        color: $purple;
         flex-direction: row;
         justify-content: space-between;
         gap: 1rem;
@@ -318,7 +327,7 @@ form{
         margin: auto;
         font-size: 1.5rem;
         font-weight: 700;
-        color: rebeccapurple;
+        color: $purple;
     }
 }
 
@@ -333,12 +342,12 @@ form{
     h4{
         font-weight: 400;
         padding: 1rem;
-        color: rebeccapurple;
+        color: $purple;
         font-size: 1.2rem;
     }
     .cantidad-tag{
         background-color: yellow;
-        color: rebeccapurple;
+        color: $purple;
         padding: 8px 15px;
         border-radius: 100%;
         display: inline;

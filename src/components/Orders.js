@@ -10,11 +10,13 @@ const Orders = ()=>{
         entregado:0
     })
 
+    let ordenesUrl = 'http://localhost:5000/Ordenes'
+
     useEffect(()=>{
          // first start the json server on port 5000
         // json-server --watch db.json --port 5000
 
-        axios.get('http://localhost:5000/Ordenes')
+        axios.get(ordenesUrl)
         .then(response=>{
             setOrders({
                 ...orderList,
@@ -76,7 +78,7 @@ const Orders = ()=>{
                         <div className="tab-content">
 
                         <div className="tab-pane fade show active table-responsive" id="nav-paq" role="tabpanel">
-                        <div className="tags">
+                        <div className="tags row">
                             <h4>En Tránsito <span className="cantidad-tag">{tags.transito}</span></h4>
                             <h4>Prealertados <span className="cantidad-tag">{tags.prealertado}</span></h4>
                             <h4>Entregados <span className="cantidad-tag">{tags.entregado}</span></h4>

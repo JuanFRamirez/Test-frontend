@@ -7,6 +7,8 @@ const Carousel = ()=>{
 
     // set api res to state to pass props to the single products
 
+    let productosUrl = 'http://localhost:5000/productos'
+
     const [products,setProducts] = useState([]);
 
     useEffect(()=>{
@@ -15,7 +17,7 @@ const Carousel = ()=>{
         // json-server --watch db.json --port 5000
 
         
-        axios.get('http://localhost:5000/Productos/')
+        axios.get(productosUrl)
         .then(response=>
           {
                 setProducts({
